@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkP3"] = self["webpackChunkP3"] || []).push([["style"],{
+(self["webpackChunkP3"] = self["webpackChunkP3"] || []).push([["app"],{
 
 /***/ "./scss/style.scss":
 /*!*************************!*\
@@ -19,4 +19,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ var __webpack_exports__ = (__webpack_exec__("./scss/style.scss"));
 /******/ }
 ]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vUDMvLi9zY3NzL3N0eWxlLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL1AzLy4vc2Nzcy9zdHlsZS5zY3NzP2I5ZjIiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9

@@ -27,7 +27,7 @@ Encore
      * Each entry will result in one JavaScript file (e.g. guc_base.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('style'   , './scss/style.scss')
+    .addEntry('app'   , './scss/style.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     //.splitEntryChunks()
@@ -49,6 +49,10 @@ Encore
     // enables hashed filenames (e.g. app.abc123.css)
     //.enableVersioning(Encore.isProduction())
 
+    .configureBabel((config) => {
+        config.plugins.push('@babel/plugin-proposal-class-properties');
+    })
+
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
@@ -58,6 +62,12 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
     .enablePostCssLoader()
+
+    // enables @babel/preset-env polyfills
+    .configureBabelPresetEnv((config) => {
+        config.useBuiltIns = 'usage';
+        config.corejs = 3;
+    })
 
 // uncomment if you use TypeScript
 //.enableTypeScriptLoader()

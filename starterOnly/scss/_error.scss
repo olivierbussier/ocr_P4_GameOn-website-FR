@@ -1,0 +1,16 @@
+
+.formData {
+    // border: 3px solid black;
+    .error-msg {
+        height: 1rem;
+        font-size: 1rem;
+        background-color: #222;
+        color: $color-invalid;
+    }
+    &:invalid {
+        border-color: $color-invalid;
+    }
+    &:valid {
+        border-color: $color-valid;
+    }
+}
