@@ -1,21 +1,31 @@
-
+/**
+ * This file implements validation of form fields
+ * In order to fix #2 #3 and #4
+ */
 import { checkText     } from "./check-text.js"
 import { checkEmail    } from "./check-email.js"
 import { checkDate     } from "./check-date.js"
 import { checkQuantity } from "./check-quantity.js"
 import { checkLocation } from "./check-location.js"
 import { checkCond     } from "./check-cond.js"
+import { initConfirm   } from "./modal.js"
 
 /* -------------------------------------------
 * Check if user entries are correct
 */
+/**
+ *
+ * @param {Event} e
+ */
 const checkInputs = (e) => {
 
     let validationFailed = false
     let a
 
-    e.preventDefault();
+    // Prevent submit of form
+    e.preventDefault()
 
+    // Select all inputs after .modal-body
     const inputs = document.querySelectorAll(".modal-body input");
 
     inputs.forEach (input => {
@@ -59,16 +69,13 @@ const checkInputs = (e) => {
             formData.setAttribute("data-error-visible", true)
 
         }
-        if (!validationFailed) {
-            // In this cas, display a confirmation box as specified
-            // in Figma templates
-
-            // Send form event using fetch API
-
-            // And then, display confirmation box using opacity
-            const formBody = document.querySelector('.modal-body')
-        }
     })
+    if (!validationFailed) {
+        // In this cas, display a confirmation box as specified
+        // in Figma templates
+        // And then, display confirmation box
+        initConfirm()
+    }
 }
 
 export const initFormDataController = () => {

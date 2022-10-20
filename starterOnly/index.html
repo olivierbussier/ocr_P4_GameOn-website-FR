@@ -51,40 +51,39 @@
                 <button class="btn-signup modal-btn">je m'inscris</button>
             </div>
 
-            <div class="bground">
+            <div class="bground input">
                 <div class="content">
-                    <span class="close" id="close-modal"></span>
+                    <span class="close close-modal"></span>
 
                     <div class="modal-body">
-                        <!-- <div class="confirm">
-                            <h1>Merci Pour votre inscription</h1>
-                            <button class="modal-btn">Fermer</button>
-                        </div> -->
-                        <form name="reserve" action="index.html" method="get">
 
+                        <form name="reserve" action="index.html" method="get" novalidate>
+
+                            <!-- Fix #2 - Implémenter les entrées du formulaire -->
+                            <!-- Fix #3 - Ajouter validation ou messages d'erreur -->
                             <div class="formData">
                                 <label for="first" >Prénom</label>
-                                <input class="text-control" type="text" id="first" name="first" minlength="2" required>
+                                <input class="text-control" type="text" id="first" name="first" minlength="2" required value="oliv">
                             </div>
 
                             <div class="formData">
                                 <label for="last" >Nom</label>
-                                <input class="text-control" type="text" id="last" name="last" minlength="2" required>
+                                <input class="text-control" type="text" id="last" name="last" minlength="2" required value="oollii">
                             </div>
 
                             <div class="formData">
                                 <label for="email" >E-mail</label>
-                                <input class="text-control" type="email" id="email" name="email" required>
+                                <input class="text-control" type="email" id="email" name="email" required value="o.b@c.fr">
                             </div>
 
                             <div class="formData">
                                 <label for="birthdate" >Date de naissance</label>
-                                <input class="text-control" type="date" id="birthdate" name="birthdate" required>
+                                <input class="text-control" type="date" id="birthdate" name="birthdate" required value="2000-12-02">
                             </div>
 
                             <div class="formData">
                                 <label for="quantity" >À combien de tournois GameOn avez-vous déjà participé ?</label>
-                                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+                                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required value="2">
                             </div>
 
                             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
@@ -96,7 +95,7 @@
                                 <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco">
                                 <label for="location2" class="checkbox-label"><span class="checkbox-icon"></span>San Francisco</label>
 
-                                <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle">
+                                <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle" checked>
                                 <label for="location3" class="checkbox-label"><span class="checkbox-icon"></span>Seattle</label>
 
                                 <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago">
@@ -127,11 +126,29 @@
                             </div>
 
                             <input class="btn-submit" type="submit" value="C'est parti" id="submit-action">
+                            <!-- Fix #2 - Implémenter les entrées du formulaire -->
+                            <!-- Fix #3 - Ajouter validation ou messages d'erreur -->
 
                         </form>
                     </div>
                 </div>
             </div>
+
+            <!-- Fix #4 - Ajouter confirmation quand envoi réussi -->
+            <div class="bground cnf">
+                <div class="content">
+                    <span class="close close-cnf"></span>
+
+                    <div class="modal-body">
+                        <div class="confirm">
+                            <h1>Merci Pour votre inscription</h1>
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <button class="modal-btn cnf">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fix #4 - Ajouter confirmation quand envoi réussi -->
         </main>
 
         <footer>
