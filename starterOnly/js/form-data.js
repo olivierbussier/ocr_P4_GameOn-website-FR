@@ -17,57 +17,48 @@ import { initConfirm   } from "./modal.js"
  *
  * @param {Event} e
  */
+
 const checkInputs = (e) => {
 
     let validationFailed = false
     let a
 
+    // Select all inputs after .modal-body
+    const inp = document.querySelectorAll(".modal-body input");
+
     // Prevent submit of form
     e.preventDefault()
 
-    // Select all inputs after .modal-body
-    const inputs = document.querySelectorAll(".modal-body input");
+    const sels = {
+        first: checkText,
+        last:  checkText,
+        email: checkEmail,
+        birthdate: checkDate,
+        quantity: checkQuantity,
+        location: checkLocation,
+        cond: checkCond
+    }
 
-    inputs.forEach (input => {
-        switch (input.getAttribute('name')) {
-            case 'first':
-            case 'last':
-                a = checkText(input)
-                break;
-            case 'email':
-                a = checkEmail(input)
-                break
-            case 'birthdate':
-                a = checkDate(input)
-                break
-            case 'quantity':
-                a = checkQuantity(input)
-                break
-            case 'location':
-                a = checkLocation(input)
-                break
-            case 'cond':
-                a = checkCond(input)
-                break
-            default:
-                a.result = true
-                break
-        }
-        const formData = input.parentElement;
-        if (a.result == true) {
-            // Field constraints are fullfilled
-            // Clear eventually previous error message
-            formData.setAttribute("data-error", "")
-            formData.setAttribute("data-error-visible", false)
-        } else {
-            validationFailed = true
-            // Get previous formData class in order to fill
-            // error-msg attached to it
+    inp.forEach((i) => {
+        const elem = sels[i.getAttribute('name')]
+        if (elem) {
+            a = elem(i)
+            const formData = i.parentElement;
+            if (a.result == true) {
+                // Field constraints are fullfilled
+                // Clear eventually previous error message
+                formData.setAttribute("data-error", "")
+                formData.setAttribute("data-error-visible", false)
+            } else {
+                validationFailed = true
+                // Get previous formData class in order to fill
+                // error-msg attached to it
 
-            // Select :after pseudo class and then message zone
-            formData.setAttribute("data-error", a.message)
-            formData.setAttribute("data-error-visible", true)
+                // Select :after pseudo class and then message zone
+                formData.setAttribute("data-error", a.message)
+                formData.setAttribute("data-error-visible", true)
 
+            }
         }
     })
     if (!validationFailed) {
