@@ -29,7 +29,7 @@ const checkInputs = (e) => {
     // Prevent submit of form
     e.preventDefault()
 
-    const sels = {
+    const validationFunctions = {
         first: checkText,
         last:  checkText,
         email: checkEmail,
@@ -39,11 +39,11 @@ const checkInputs = (e) => {
         cond: checkCond
     }
 
-    inp.forEach((i) => {
-        const elem = sels[i.getAttribute('name')]
-        if (elem) {
-            a = elem(i)
-            const formData = i.parentElement;
+    inp.forEach((field) => {
+        const validationFunction = validationFunctions[field.getAttribute('name')]
+        if (validationFunction) {
+            a = validationFunction(field)
+            const formData = field.parentElement;
             if (a.result == true) {
                 // Field constraints are fullfilled
                 // Clear eventually previous error message

@@ -3,7 +3,7 @@
  *  - check if required attribute is present
  *  - test field among min & max numbers if present
  */
- export const checkLocation = (field = null) => {
+ export const checkLocation = (field) => {
 
     // Get name of radiobutton
     const radioName = field.getAttribute('name')
@@ -19,5 +19,4 @@
         // If field constraints are fullfiled
         return {result: true, message: ""};
     }
-    return {status: false, message: "Champ inexistant"}
 }

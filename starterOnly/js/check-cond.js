@@ -3,7 +3,7 @@
  *  - check if required attribute is present
  *  - test field among min & max numbers if present
  */
- export const checkCond = (field = null) => {
+ export const checkCond = (field) => {
 
     // Get name of radiobutton
     const checkName = field.getAttribute('name')
