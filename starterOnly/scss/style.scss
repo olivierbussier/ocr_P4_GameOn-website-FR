@@ -1,13 +1,11 @@
-@import "variables",
-        "root";
+@import "utils/variables";
 
-@import "button",
-        "input";
+@import "base/root";
 
-@import "topnav";
+@import "composants/button",
+        "composants/input";
 
-@import "main",
-        "modal",
-        "footer";
-
-@import "unused"
+@import "layout/topnav",
+        "layout/main",
+        "layout/modal",
+        "layout/footer";

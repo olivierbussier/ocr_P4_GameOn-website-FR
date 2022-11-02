@@ -13,27 +13,27 @@
 
     <body>
 
-        <div class="topnav" id="myTopnav">
+        <header class="topnav" id="myTopnav">
 
             <div class="header-logo">
                 <img alt="logo" src="Logo.png"> <!-- width="auto" height="auto"> -->
             </div>
 
-            <div class="main-navbar">
+            <nav class="main-navbar">
 
                 <a href="#" class="active"><span>Accueil</span></a>
                 <a href="#"><span>Détails de l'évènement</span></a>
                 <a href="#"><span>À propos</span></a>
                 <a href="#"><span>Contact</span></a>
                 <a href="#"><span>Évènements passés</span></a>
-                <a href="javascript:void(0);" class="icon" onclick="editNav()"><i class="fa fa-bars"></i></a>
+                <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
 
-            </div>
+            </nav>
 
-        </div>
+        </header>
 
         <main>
-            <div class="hero-section">
+            <section class="hero-section">
 
                 <div class="hero-content">
                     <h1 class="hero-headline">Marathon national<br>de jeux vidéos</h1>
@@ -49,9 +49,9 @@
                 </div>
 
                 <button class="btn-signup modal-btn">je m'inscris</button>
-            </div>
+            </section>
 
-            <div class="bground input">
+            <section class="bground input">
                 <div class="content">
                     <span class="close close-modal"></span>
 
@@ -125,17 +125,17 @@
 
                             </div>
 
-                            <input class="btn-submit" type="submit" value="C'est parti" id="submit-action">
+                            <input class="btn-submit" type="submit" name="go"  value="C'est parti" id="submit-action">
                             <!-- Fix #2 - Implémenter les entrées du formulaire -->
                             <!-- Fix #3 - Ajouter validation ou messages d'erreur -->
 
                         </form>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Fix #4 - Ajouter confirmation quand envoi réussi -->
-            <div class="bground cnf">
+            <section class="bground cnf">
                 <div class="content">
                     <span class="close close-cnf"></span>
 
@@ -146,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- Fix #4 - Ajouter confirmation quand envoi réussi -->
         </main>
 

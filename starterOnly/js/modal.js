@@ -50,4 +50,19 @@ export const initConfirm = () => {
     //btnSignup.addEventListener("click", funcLaunchModalConfirm)
     closeModalConfirm.addEventListener("click", funcCloseModalConfirm)
     closeCrossModal.addEventListener(  "click", funcCloseModalConfirm)
+
+    // Reset entries for next inputs
+    const inp = document.querySelectorAll(".modal-body input");
+    inp.forEach((elem) => {
+        const name = elem.attributes.name.value
+        if (name === 'location')
+            elem.checked = false
+        else if (name === 'cond')
+            elem.checked = false
+        else if (name === 'prevenu')
+            elem.checked = true
+        else if (name !== 'go')
+            elem.value = ''
+    })
+    document.getElementById('checkbox2').checked = true
 }

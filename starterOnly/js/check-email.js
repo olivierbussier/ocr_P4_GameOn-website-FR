@@ -19,7 +19,9 @@ export const checkEmail = (field) => {
 
     // check mail expression using regex
 
-    if (/\S+@\S+\.\S+/.test(field.value) === true) {
+    const reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+    if (reg.test(field.value) === true) {
         // If field constraints are fullfiled
         return {result: true, message: ""};
     } else {
